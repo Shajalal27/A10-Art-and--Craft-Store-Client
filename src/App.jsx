@@ -1,14 +1,16 @@
 
 import './App.css'
 
+
 function App() {
  
 
   return (
     <>
       
-      <h1 className='text-3xl text-purple-700'>Vite + React</h1>
-      
+      <div>
+      <h2>hellow</h2>
+      </div>
     </>
   )
 }
