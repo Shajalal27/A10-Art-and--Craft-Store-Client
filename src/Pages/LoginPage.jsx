@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
 import SocialIcons from "../components/SocialIcons/SocialIcons";
+import Swal from "sweetalert2";
 
 
 
@@ -25,12 +26,20 @@ const LoginPage = () => {
         .then(result =>{   
             console.log(result);
             setLogInSuccess
-            alert('Successfully Log in')
+            Swal.fire({
+                title: "'Logged in successfull!",
+                text: "You clicked the button!",
+                icon: "success"
+              });
         })
         .catch(error =>{
             console.error(error);
             setLogInError
-            alert('Log in Failed')
+            Swal.fire({
+                title: "'Invalied logged in",
+                text: "You clicked the button!",
+                icon: "error"
+              });
         })
       }
     
@@ -67,15 +76,15 @@ const LoginPage = () => {
             
              <div className="mx-auto text-center">
              <SocialIcons/>
-                 <p className="text-orange-500 font-semibold pb-8">Please register now? <Link to='/register'>
+                 <p className="text-orange-500 font-semibold pt-8 pb-12">Please register now? <Link to='/register'>
                         <button className="text-green-600 font-bold hover:underline">Register</button>
                     </Link>
                 </p> 
                 {
-                    setLogInError && <p>{logInError}</p>
+                    logInError && <p>{logInError}</p>
                 }
                 {
-                    setLogInSuccess && <p>{logInSuccess}</p>
+                    logInSuccess && <p>{logInSuccess}</p>
                 }
              </div>
            </div>

@@ -46,7 +46,7 @@ const Navbar = () => {
                     user ?
                 <div tabIndex={0} role="button" className=" flex gap-4 mr-12">
                     <div className=" bg-slate-400 w-14 h-14 rounded-full flex justify-center items-center">
-                        <img alt="" src={user.photoURL} 
+                        <img className="rounded-full" alt="" src={user.photoURL} 
                     title={user.displayName}
                     />
                     </div>
