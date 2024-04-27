@@ -1,7 +1,9 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import useAuth from "../Hooks/useAuth";
+
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { useState } from "react";
+import auth from "../firebase/firebase.config";
+import { Link } from "react-router-dom";
 
 
 
@@ -9,69 +11,82 @@ import { useState } from "react";
 const RegisterPage = () => {
     const [registerError, setRegisterError] = useState('');
     const [registerSuccess, setRegisterSuccess] = useState('');
-    const{createUser} = useAuth();
+    
 
-    const {register,  handleSubmit, formState: { errors }, } = useForm();
-      const onSubmit = (data) =>{
-        console.log(data)
+    const handleRegister = e =>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password);
 
         //reset 
         setRegisterError('');
         setRegisterSuccess('');
-        
-        const{email, password} = data;
-        createUser(email, password)
 
+        if(password.length < 6) {
+            setRegisterError('Password should be at lest 6 charcter or longer')
+            return;
+        }
+
+        else if(!/[A-Z]/.test(password)){
+            setRegisterError("Your password should have at least one upper case characters. ");
+            return;
+
+        }
+
+        //create user
+        createUserWithEmailAndPassword(auth, email, password)
         .then(result =>{
-            console.log(result);
-            setRegisterSuccess
+            console.log(result.user);
+            setRegisterSuccess('Registetion successfully')
         })
         .catch(error =>{
             console.error(error);
-            setRegisterError
+            setRegisterError(error.message)
+            
         })
+ 
+    }
 
-      }
+        
+       
+      
         
     return (
         <div className="bg-[#bed6f4]">
            <div>
            <h2 className="text-center text-3xl font-bold pt-4">Please Register now! </h2>
-            <form onSubmit={handleSubmit(onSubmit)}  className="card-body mx-auto lg:w-1/2 md:w-3/4">
+            <form onSubmit={handleRegister}  className="card-body mx-auto lg:w-1/2 md:w-3/4">
                 <div className="form-control">
                     <label className="label">
                          <span className="label-text">Name</span>
                      </label>
-                    <input type="text" name="name" placeholder="Your name" className="input input-bordered"
-                     {...register("name", { required: true })}
+                    <input type="text" name="name" placeholder="Your name" className="input input-bordered" required
                     />
-                    {errors.fullName && <span className="text-red-500">This field is required</span>}
+                    
                 </div>
                 <div className="form-control">
                     <label className="label">
                          <span className="label-text">Email</span>
                      </label>
-                    <input type="email" name="email" placeholder="Email" className="input input-bordered" 
-                    {...register("email", { required: true })}
+                    <input type="email" name="email" placeholder="Email" className="input input-bordered" required
                      />
-                    {errors.email && <span className="text-red-500">This field is required</span>} 
+                    
                 </div>
                 <div className="form-control">
                     <label className="label">
                          <span className="label-text">Photo Url</span>
                      </label>
                     <input type="text" name="photo" placeholder="Photp Url" className="input input-bordered" 
-                    {...register("photo")}
                      />
                 </div>
                 <div className="form-control">
                     <label className="label">
                          <span className="label-text">Password</span>
                     </label>
-                     <input type="password" name="password" placeholder="Password" className="input input-bordered" 
-                     {...register("password", { required: true })}
+                     <input type="password" name="password" placeholder="Password" className="input input-bordered" required
                       />
-                    {errors.password && <span className="text-red-500">This field is required</span>}
+                    
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
@@ -85,8 +100,8 @@ const RegisterPage = () => {
                         <button className="text-green-600 font-bold hover:underline">Login</button>
                     </Link>
                 </p> 
-                {setRegisterError && <p>{registerError}</p>}
-                {setRegisterSuccess && <p>{registerSuccess}</p>}
+                {registerError && <p className="text-red-600">{registerError}</p>}
+                {registerSuccess && <p className="text-green-600">{registerSuccess}</p>}
              </div>
            </div>
             

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
+import SocialIcons from "../components/SocialIcons/SocialIcons";
 
 
 
@@ -63,7 +64,9 @@ const LoginPage = () => {
                         <button className="btn btn-info uppercase ">Login</button>
                     </div>
              </form> 
+            
              <div className="mx-auto text-center">
+             <SocialIcons/>
                  <p className="text-orange-500 font-semibold pb-8">Please register now? <Link to='/register'>
                         <button className="text-green-600 font-bold hover:underline">Register</button>
                     </Link>
