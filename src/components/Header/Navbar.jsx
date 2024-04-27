@@ -1,8 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import useAuth from "../../Hooks/useAuth";
+import logoImage from "../../assets/logo.png";
 
 
 const Navbar = () => {
+    const{user , logOut} = useAuth();
+
+    const handleLogOut = () =>{
+        logOut()
+        .then( () => console.log('user logged in successfully'))
+        .catch(error =>console.error(error))
+
+    }
     const navLinks = <>
          <li><NavLink to={'/'}>Home</NavLink></li>
          <li><NavLink to={'/art-craft-items'}>All Art & Craft Items</NavLink></li>
@@ -23,7 +33,7 @@ const Navbar = () => {
                 </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">
-                    <img className="w-14" src={logo} alt="" />
+                    <img className="w-14" src={logoImage} alt="" />
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -32,14 +42,28 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {
+                    user ?
+                <div tabIndex={0} role="button" className=" flex gap-4 mr-12">
+                    <div className=" bg-slate-400 w-14 h-14 rounded-full flex justify-center items-center">
+                        <img alt="" src={logo} 
+                    title={user.email}
+                    />
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <button onClick={handleLogOut} className="btn">LOGOUT</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-               <Link to={'/logIn'}>
-                    <button className="btn">Login</button>
-                </Link>
+                :
+                    <Link to={'/logIn'}>
+                        <button className="btn">Login</button>
+                    </Link>
+                }
+               
             </div>
         </div>
     );

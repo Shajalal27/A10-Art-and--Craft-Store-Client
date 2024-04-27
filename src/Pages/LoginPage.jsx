@@ -60,7 +60,7 @@ const LoginPage = () => {
                         </label>
                 </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-info uppercase">Login</button>
+                        <button className="btn btn-info uppercase ">Login</button>
                     </div>
              </form> 
              <div className="mx-auto text-center">
