@@ -8,6 +8,7 @@ const Navbar = () => {
          <li><NavLink to={'/art-craft-items'}>All Art & Craft Items</NavLink></li>
          <li><NavLink to={'/addCraft'}>Add Craft Item</NavLink></li>
          <li><NavLink to={'/craftList'}>My Craft List</NavLink></li>
+        
          
     </>
     return (
@@ -31,7 +32,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-               <Link to={'/logIn'}><a className="btn">Login</a></Link>
+                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    </div>
+                </div>
+               <Link to={'/logIn'}>
+                    <button className="btn">Login</button>
+                </Link>
             </div>
         </div>
     );
