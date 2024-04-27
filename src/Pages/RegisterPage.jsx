@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import auth from "../firebase/firebase.config";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -38,12 +39,21 @@ const RegisterPage = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then(result =>{
             console.log(result.user);
-            setRegisterSuccess('Registetion successfully')
+            // setRegisterSuccess('Registetion successfully')
+            Swal.fire({
+                title: "'Registetion successfully!",
+                text: "You clicked the button!",
+                icon: "success"
+              });
         })
         .catch(error =>{
             console.error(error);
             setRegisterError(error.message)
-            
+            Swal.fire({
+                title: "Already register!",
+                text: "You clicked the button!",
+                icon: "warning"
+              });
         })
  
     }
@@ -100,7 +110,7 @@ const RegisterPage = () => {
                         <button className="text-green-600 font-bold hover:underline">Login</button>
                     </Link>
                 </p> 
-                {registerError && <p className="text-red-600">{registerError}</p>}
+                {registerError && <p className="text-red-600 pb-12">{registerError}</p>}
                 {registerSuccess && <p className="text-green-600">{registerSuccess}</p>}
              </div>
            </div>
