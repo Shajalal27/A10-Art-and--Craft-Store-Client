@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const CardItems = ({craftItem}) => {
@@ -16,10 +17,12 @@ const CardItems = ({craftItem}) => {
              <p className="text-xl font-bold bg-pink-600 p-1">{stockStatus}</p>
              <p className="text-xl font-semibold text-green-600">{processing_time}</p>
              <div className="card-actions justify-end">
-             <button className="btn btn-primary font-bold">View Details</button>
+            <Link to='/view_details'>
+                <button className="btn btn-primary font-bold">View Details</button>
+            </Link>
              </div>
          </div>
-     </div>
+        </div>
     );
 };
 

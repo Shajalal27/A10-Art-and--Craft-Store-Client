@@ -9,6 +9,7 @@ import MyArtCraftList from '../components/MyArtCraftList/MyArtCraftList';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import ArtCraftItems from '../components/ArtCraftItems/ArtCraftItems';
+import ViewDetails from '../Pages/ViewDetails/ViewDetails';
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
         {
           path: '/register',
           element: <RegisterPage></RegisterPage>
+        },
+        {
+          path: '/view_details',
+          element: <ViewDetails></ViewDetails>,
+          loader: () => fetch('http://localhost:5000/addCraft')
         }
       ]
     }
