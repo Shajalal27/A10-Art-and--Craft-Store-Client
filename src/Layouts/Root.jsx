@@ -7,10 +7,13 @@ import Experience from "../components/Experience/Experience";
 const Root = () => {
     return (
         <div>
-            <Navbar ></Navbar>
-            <Banner></Banner>
-            <Experience></Experience>
-            <Outlet ></Outlet>
+            <Navbar></Navbar>
+            <Outlet >
+                
+                <Banner></Banner>
+                <Experience></Experience>
+            </Outlet>
+            
         </div>
     );
 };

@@ -1,10 +1,16 @@
 
+import Banner from "../components/Header/Banner";
+import Experience from "../components/Experience/Experience";
+
+
 
 const HomePage = () => {
     return (
-        <div >
-            <h2>This is home page</h2>
-        </div>
+        < >
+           
+            <Banner></Banner>
+            <Experience></Experience>
+        </>
     );
 };
 
