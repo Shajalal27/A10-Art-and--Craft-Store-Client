@@ -5,6 +5,7 @@ import { useState } from "react";
 import auth from "../firebase/firebase.config";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
 
 
 
@@ -12,14 +13,17 @@ import Swal from "sweetalert2";
 const RegisterPage = () => {
     const [registerError, setRegisterError] = useState('');
     const [registerSuccess, setRegisterSuccess] = useState('');
-    
+    const{createUser} = useAuth();
 
     const handleRegister = e =>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
+        createUser(email, password)
 
+        //create new user
+        const user = {email};
         //reset 
         setRegisterError('');
         setRegisterSuccess('');

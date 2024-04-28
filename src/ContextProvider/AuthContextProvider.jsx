@@ -20,8 +20,10 @@ const twitterProvider = new TwitterAuthProvider();
 const AuthContextProvider = ({children}) => {
 
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) =>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
@@ -62,7 +64,8 @@ const AuthContextProvider = ({children}) => {
         googleLogIn,
         githubLogIn,
         twitterLogIn,
-        logOut
+        logOut, 
+        loading
     }
     return (
         <AuthContext.Provider value={authInfo}>
