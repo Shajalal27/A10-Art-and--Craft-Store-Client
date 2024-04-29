@@ -27,8 +27,8 @@ const UpdateItem = () => {
         console.log(updateCraftItem);
 
         //send data server
-        fetch('http://localhost:5000/addCraft', {
-            method: "POST",
+        fetch(`http://localhost:5000/addCraft/${_id}`, {
+            method: "PUT",
             headers: {
                 'content-type': 'application/json'
             },
@@ -37,10 +37,10 @@ const UpdateItem = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
-            if(data.insertedId){
+            if(data.modifiedCount > 0){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Craft Item added successfully',
+                    text: 'Craft Item Update successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
@@ -178,7 +178,7 @@ const UpdateItem = () => {
                     </label>
                 </div>   
             </div>
-            <input type="submit" value="Add"  className="btn btn-block bg-green-600"/>
+            <input type="submit" value="Update"  className="btn btn-block bg-green-600"/>
         </form>
     </div>
     );
