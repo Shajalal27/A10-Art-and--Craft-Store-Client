@@ -18,17 +18,27 @@ const MyListPage = ({mylist}) => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-            //   Swal.fire({
-            //     title: "Deleted!",
-            //     text: "Your file has been deleted.",
-            //     icon: "success"
-            //   });
+            
+            fetch(`http://localhost:5000/addCraft/${_id}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data)
+                    if(data.deletedCount > 0){
+                        Swal.fire({
+                         title: "Deleted!",
+                         text: "Your file has been deleted.",
+                         icon: "success"
+                        });
+                    }
+                })
             }
           });
     }
 
     return (
-        <div className="card w-1/2 card-side bg-orange-300 shadow-xl pl-10
+        <div className="card w-full card-side bg-orange-300 shadow-xl pl-10
          pr-10 mt-10 mb-16 ">
             <figure><img className="w-96" src={photo} alt=""/></figure>
             <div className="card-body">

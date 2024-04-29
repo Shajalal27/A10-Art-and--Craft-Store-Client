@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CardItems = ({craftItem}) => {
     const {photo, item_name, subcategory_name, description, price, rating, customization, processing_time, name, email, stockStatus} = craftItem;
     return (
-        <div className="card w-1/2 card-side bg-yellow-100 shadow-xl pl-10
+        <div className="card w-full card-side bg-yellow-100 shadow-xl pl-10
         pr-10 mt-10 mb-16 ">
          <figure><img className="w-96" src={photo} alt=""/></figure>
          <div className="card-body">

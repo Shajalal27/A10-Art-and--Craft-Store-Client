@@ -23,7 +23,7 @@ const MyArtCraftList = () => {
                 </details>
             </div>
         </div> 
-        <div className="flex gap-8">
+        <div className="grid md:grid-cols-2 gap-8 w-full">
             {
                 myLists.map(mylist => <MyListPage key={mylist._id} 
                     mylist={mylist}>      
