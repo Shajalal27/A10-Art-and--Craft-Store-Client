@@ -10,6 +10,7 @@ import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import ArtCraftItems from '../components/ArtCraftItems/ArtCraftItems';
 import ViewDetails from '../Pages/ViewDetails/ViewDetails';
+import UpdateItem from '../components/UpdateItem/UpdateItem';
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
           path: '/view_details',
           element: <ViewDetails></ViewDetails>,
           loader: () => fetch('http://localhost:5000/addCraft')
+        },
+        {
+          path:'craftList/update_item/:id',
+          element: <UpdateItem></UpdateItem>,
+          loader: ({params}) => fetch(`http://localhost:5000/addCraft/${params.id}`)
+          
         }
       ]
     }

@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const MyListPage = ({mylist}) => {
+
     const { _id, photo, item_name,  price, rating, customization, stockStatus} = mylist;
 
     const handleDelete = _id =>{
@@ -51,7 +53,9 @@ const MyListPage = ({mylist}) => {
                 <p className="text-xl font-bold bg-pink-600 p-1">{stockStatus}</p>
                 <p className="text-xl font-semibold text-green-600">{customization}</p>
                 <div className="card-actions justify-between ">
-                    <button className="btn btn-primary  font-bold">Update</button>
+                    <Link to={`update_item/${_id}`}>
+                        <button className="btn btn-primary  font-bold">Update</button>
+                    </Link>
                     <button onClick={() => handleDelete(_id)}
                     className="btn btn-primary  font-bold">Delete</button>
                 </div>
