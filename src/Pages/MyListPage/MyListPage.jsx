@@ -53,7 +53,9 @@ const MyListPage = ({mylist}) => {
                 <p className="text-xl font-bold bg-pink-600 p-1">{stockStatus}</p>
                 <p className="text-xl font-semibold text-green-600">{customization}</p>
                 <div className="card-actions justify-between ">
-                    <Link to={`update_item/${_id}`}>
+                    <Link to={`update_item/${_id}`}
+                    
+                    >
                         <button className="btn btn-primary  font-bold">Update</button>
                     </Link>
                     <button onClick={() => handleDelete(_id)}

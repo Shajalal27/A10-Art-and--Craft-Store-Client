@@ -11,7 +11,7 @@ const UpdateItem = () => {
     const handleUpdateItem = event =>{
         event.preventDefault();
         const form = event.target;
-        console.log('clicked')
+
         const photo = form.photo.value;
         const item_name = form.item_name.value;
         const subcategory_name = form.subcategory_name.value;
