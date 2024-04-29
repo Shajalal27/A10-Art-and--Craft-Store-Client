@@ -1,10 +1,27 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import logoImage from "../../assets/logo.png";
+import { useEffect, useState } from "react";
 
 
 const Navbar = () => {
+    const[theme, setTheme] = useState('light');
     const{user , logOut} = useAuth();
+
+    useEffect(() =>{
+        localStorage.setItem('theme', theme)
+        const localTheme = localStorage.getItem('theme')
+        document.querySelector('html').setAttribute('data-theme', localTheme)
+    }, [theme])
+
+    const handleToggle = (e) =>{
+        console.log(e.target.checked)
+        if(e.target.checked){
+            setTheme('synthwave')
+        } 
+        else{setTheme('light')}
+    }
+    console.log(theme);
 
     const handleLogOut = () =>{
         logOut()
@@ -40,7 +57,11 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
+            
             <div className="navbar-end">
+            <div className="pr-10 size-auto">
+                 <input onChange={handleToggle} type="checkbox" className="toggle theme-controller"/>
+            </div>
                 {
                     user ?
                 <div tabIndex={0} role="button" className=" flex gap-4 mr-12">
