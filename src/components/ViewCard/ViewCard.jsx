@@ -21,7 +21,7 @@ const ViewCard = ({view}) => {
                 <button className="btn btn-primary font-bold">View Details</button>
             </div>
         </div>
-    </div>
+        </div>
     );
 };
 
