@@ -1,7 +1,31 @@
+/* eslint-disable react/prop-types */
+
+import Swal from "sweetalert2";
 
 
 const MyListPage = ({mylist}) => {
-    const {photo, item_name, subcategory_name, description, price, rating, customization, processing_time, name, email, stockStatus} = mylist;
+    const { _id, photo, item_name,  price, rating, customization, stockStatus} = mylist;
+
+    const handleDelete = _id =>{
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+            //   Swal.fire({
+            //     title: "Deleted!",
+            //     text: "Your file has been deleted.",
+            //     icon: "success"
+            //   });
+            }
+          });
+    }
 
     return (
         <div className="card w-1/2 card-side bg-orange-300 shadow-xl pl-10
@@ -18,7 +42,8 @@ const MyListPage = ({mylist}) => {
                 <p className="text-xl font-semibold text-green-600">{customization}</p>
                 <div className="card-actions justify-between ">
                     <button className="btn btn-primary  font-bold">Update</button>
-                    <button className="btn btn-primary  font-bold">Delete</button>
+                    <button onClick={() => handleDelete(_id)}
+                    className="btn btn-primary  font-bold">Delete</button>
                 </div>
             </div>
         </div>
