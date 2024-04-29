@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaLocationDot, FaMessage, FaPhone, FaTwitter } from "react-icons/fa6";
+import {FaLocationDot, FaMessage, FaPhone } from "react-icons/fa6";
 import logo from "../../assets/logo.png";
 import { MdWatchLater } from "react-icons/md";
 
