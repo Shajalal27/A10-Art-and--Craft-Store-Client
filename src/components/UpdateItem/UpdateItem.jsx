@@ -178,8 +178,9 @@ const UpdateItem = () => {
                     </label>
                 </div>   
             </div>
-            <input type="submit" value="Update"  className="btn btn-block bg-green-600"/>
-        </form>
+            <input type="submit" value="Update" className="btn btn-block bg-green-600" d
+            />
+         </form>
     </div>
     );
 };

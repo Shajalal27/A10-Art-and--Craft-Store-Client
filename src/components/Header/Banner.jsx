@@ -13,6 +13,7 @@ import { useTypewriter } from 'react-simple-typewriter'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Fade, Slide } from "react-awesome-reveal";
 
 
 const Banner = () => {
@@ -49,7 +50,9 @@ const Banner = () => {
             </Swiper>
         </div>
         <div className="absolute top-10 right-0 z-10">
+          <Fade cascade damping={0.5} >
             <h1 className="text-green-400 md:text-6xl text-3xl font-extrabold  lg:pr-48 pr-6 font-sans ">The Most Creative</h1>
+          </Fade>
             <h2 className="text-4xl pt-4"><span style={{fontStyle:'italic', fontWeight:'bold', color:'orange'
           
           }}>{typeEffect}</span></h2>

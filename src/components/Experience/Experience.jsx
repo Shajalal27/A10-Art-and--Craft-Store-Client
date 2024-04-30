@@ -1,3 +1,4 @@
+import {  Slide } from "react-awesome-reveal";
 import bannerImg from "../../assets/img7.jpg";
 
 const Experience = () => {
@@ -9,11 +10,14 @@ const Experience = () => {
             </div>
             <div className="card-body md:w-1/2 w-full absolute lg:top-0 lg:left-0 bg-gray-900 opacity-90 
             text-slate-300 h-full">
+            <Slide cascade damping={0.8}>
                 <h2 className="card-title text-4xl font-bold">20 Years Of  <br /> In Art & Drawing School</h2>
                 <p className="">
                 Jul 12, 2018 — Some of my art experiences is exhibiting my paintings in group shows for artists with disabilities These include various olde city galleries 
                 I have always loved art but I have no ability to draw. 
                 </p>
+            </Slide >
+                
                 <div className="lg:pt-0 pt-28">
                     <div>
                         <div className="flex justify-between">
@@ -46,6 +50,7 @@ const Experience = () => {
                 </div>
 
             </div> 
+            
         </div>
     );
 };
