@@ -51,7 +51,7 @@ const AddCraftItem = () => {
                 <div className="flex gap-5 mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Photo URL</span>
+                            <span className="label-text ">Photo URL</span>
                         </label>
                         <label className="">
                             <input type="text" name="photo" placeholder="Photo URL"

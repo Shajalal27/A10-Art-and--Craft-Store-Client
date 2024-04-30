@@ -6,7 +6,7 @@ const CardItems = ({craftItem}) => {
     return (
         <div className="card w-full card-side bg-yellow-100 shadow-xl pl-10
         pr-10 mt-10 mb-16 ">
-         <figure><img className="w-96" src={photo} alt=""/></figure>
+         <figure><img className="w-96 h-72" src={photo} alt=""/></figure>
          <div className="card-body">
              <h2 className="card-title text-3xl font-bold">{item_name}</h2>
              <p>{description}</p>

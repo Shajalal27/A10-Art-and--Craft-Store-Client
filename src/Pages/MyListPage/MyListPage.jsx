@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const MyListPage = ({mylist}) => {
 
-    const { _id, photo, item_name,  price, rating, customization, stockStatus} = mylist;
+    const { _id, photo, item_name,  price, rating, customization, stockStatus, subcategory_name} = mylist;
 
     const handleDelete = _id =>{
         console.log(_id);
@@ -42,7 +42,7 @@ const MyListPage = ({mylist}) => {
     return (
         <div className="card w-full card-side bg-orange-300 shadow-xl pl-10
          pr-10 mt-10 mb-16 ">
-            <figure><img className="w-96" src={photo} alt=""/></figure>
+            <figure><img className="w-96 h-72" src={photo} alt=""/></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl font-bold">{item_name}</h2>
                
@@ -52,6 +52,7 @@ const MyListPage = ({mylist}) => {
                 </div>
                 <p className="text-xl font-bold bg-pink-600 p-1">{stockStatus}</p>
                 <p className="text-xl font-semibold text-green-600">{customization}</p>
+                <h3>Category:{subcategory_name}</h3>
                 <div className="card-actions justify-between ">
                     <Link to={`update_item/${_id}`}
                     

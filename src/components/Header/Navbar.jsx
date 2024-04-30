@@ -4,6 +4,7 @@ import logoImage from "../../assets/logo.png";
 import { useEffect, useState } from "react";
 
 
+
 const Navbar = () => {
     const[theme, setTheme] = useState('light');
     const{user , logOut} = useAuth();

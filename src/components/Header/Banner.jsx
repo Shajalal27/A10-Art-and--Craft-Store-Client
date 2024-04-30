@@ -4,6 +4,10 @@ import bannerImg1 from "../../assets/banner1.jpg";
 import bannerImg2 from "../../assets/banner2.jpg";
 import bannerImg3 from "../../assets/banner3.jpg";
 import bannerImg4 from "../../assets/banner4.jpg";
+import { useTypewriter } from 'react-simple-typewriter'
+
+
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -12,6 +16,14 @@ import 'swiper/css/pagination';
 
 
 const Banner = () => {
+  const [typeEffect] = useTypewriter({
+    words: ['Landscape Painting', 'Portrait Drawing', 'Watercolour Painting', 'Oil Painting', 'Charcoal Sketching', 'Cartoon Drawing'],
+    loop:{},
+    typeSpeed:100,
+    delaySpeed:40
+
+  })
+
     return (
     <div className="relative">
         <div className="bg-green-800  opacity-45 bg-cover">
@@ -37,10 +49,12 @@ const Banner = () => {
             </Swiper>
         </div>
         <div className="absolute top-10 right-0 z-10">
-            <h2 className="text-green-400 md:text-6xl text-3xl font-extrabold  lg:pr-36 pr-6 font-sans ">The Most Creative <br /><span className="bg-blue-600 lg:text-5xl text-2xl italic text-white">Art School</span> That Can <br />Develop Your Talent</h2>
-
-            <div className="pt-24">
-                <button className="p-3 bg-orange-400 px-10 py-4 text-2xl font-bold rounded-tl-lg rounded-br-lg">GET STARTED</button>
+            <h1 className="text-green-400 md:text-6xl text-3xl font-extrabold  lg:pr-48 pr-6 font-sans ">The Most Creative</h1>
+            <h2 className="text-4xl pt-4"><span style={{fontStyle:'italic', fontWeight:'bold', color:'orange'
+          
+          }}>{typeEffect}</span></h2>
+            <div className="pt-48">
+              <button className="p-3 bg-orange-400 px-10 py-4 text-2xl font-bold rounded-tl-lg rounded-br-lg ">GET STARTED</button>
             </div>
         </div>
     </div>
