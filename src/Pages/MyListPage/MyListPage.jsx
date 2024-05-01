@@ -21,7 +21,7 @@ const MyListPage = ({mylist}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/addCraft/${_id}`, {
+            fetch(` https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

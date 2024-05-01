@@ -27,7 +27,7 @@ const UpdateItem = () => {
         console.log(updateCraftItem);
 
         //send data server
-        fetch(`http://localhost:5000/addCraft/${_id}`, {
+        fetch(` https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

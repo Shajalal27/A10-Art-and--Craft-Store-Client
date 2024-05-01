@@ -12,7 +12,7 @@ const MyArtCraftList = () => {
 
 
     useEffect( () =>{
-        fetch('http://localhost:5000/addCraft')
+        fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
         .then(res => res.json())
         .then(data =>{
             console.log(data)
@@ -36,7 +36,7 @@ const MyArtCraftList = () => {
     <div>    
         <h2 className="text-4xl font-bold text-center mt-8 text-sky-700 underline italic">My Art Craft List</h2>
         <div className="container mt-5">
-        <div className="grid grid-cols-2 w-full bg-yellow-300">
+        <div className="grid grid-cols-2 w-full ">
             <h2>Card Item</h2> 
             <div className="mt-4 pb-24">
                 <Select
@@ -55,8 +55,7 @@ const MyArtCraftList = () => {
                         />
                     </div>  
                     <h5 className="cart-title">{result.item_name}</h5> 
-                    <p>Category:{result.subcategory_name
-}</p>
+                    <p>Category:{result.subcategory_name}</p>
                 </div>
             ))}
         </div>

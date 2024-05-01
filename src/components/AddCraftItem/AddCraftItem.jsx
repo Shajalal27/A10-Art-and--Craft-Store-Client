@@ -22,7 +22,7 @@ const AddCraftItem = () => {
         console.log(newCratItem);
 
         //send data server
-        fetch('http://localhost:5000/addCraft', {
+        fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -49,7 +49,7 @@ const AddCraftItem = () => {
             <form onSubmit={handleAddCraftItem}>
                  {/* item name and photo url */}
                 <div className="flex gap-5 mb-8">
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text ">Photo URL</span>
                         </label>
@@ -58,7 +58,7 @@ const AddCraftItem = () => {
                             className="input input-bordered w-full"/>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">Item Name</span>
                         </label>
@@ -70,7 +70,7 @@ const AddCraftItem = () => {
                 </div>
                  {/* subcategory and description */}
                 <div className="flex gap-5 mb-8">
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">Subcategory Name</span>
                         </label>
@@ -79,7 +79,7 @@ const AddCraftItem = () => {
                             className="input input-bordered w-full"/>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">Short description</span>
                         </label>
@@ -91,7 +91,7 @@ const AddCraftItem = () => {
                 </div>
                  {/* Price and rating*/}
                 <div className="flex gap-5 mb-8">
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -100,7 +100,7 @@ const AddCraftItem = () => {
                             className="input input-bordered w-full"/>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
@@ -112,7 +112,7 @@ const AddCraftItem = () => {
                 </div>
                  {/* Customixation and processing time */}
                 <div className="flex gap-5 mb-8">
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">Customization</span>
                         </label>
@@ -121,7 +121,7 @@ const AddCraftItem = () => {
                             className="input input-bordered w-full"/>
                         </label>
                     </div> 
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">Processing Time</span>
                         </label>
@@ -133,7 +133,7 @@ const AddCraftItem = () => {
                 </div>
                  {/* user name and email*/}
                 <div className="flex gap-5 mb-8">
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">User Name</span>
                         </label>
@@ -142,7 +142,7 @@ const AddCraftItem = () => {
                             className="input input-bordered w-full"/>
                         </label>
                     </div> 
-                    <div className="form-control md:w-1/2">
+                    <div className="form-control md:w-1/2 w-full">
                         <label className="label">
                             <span className="label-text">User Email</span>
                         </label>

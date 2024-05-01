@@ -23,12 +23,12 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <HomePage></HomePage>,
-            loader: () => fetch('http://localhost:5000/addCraft')
+            loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
         },
         {
           path: '/art-craft-items',
           element: <ArtCraftItems></ArtCraftItems>,
-          loader: () => fetch('http://localhost:5000/addCraft')
+          loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
         },
         {
           path: '/addCraft',
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
           element: <PrivateRoutes>
                        <MyArtCraftList></MyArtCraftList>
                     </PrivateRoutes>,
-          loader: () => fetch('http://localhost:5000/addCraft')
+          loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
         },
         {
           path: '/logIn',
@@ -52,12 +52,12 @@ const router = createBrowserRouter([
         {
           path: '/view_details',
           element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-          loader: () => fetch('http://localhost:5000/addCraft')
+          loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
         },
         {
           path:'craftList/update_item/:id',
           element: <PrivateRoutes><UpdateItem></UpdateItem></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/addCraft/${params.id}`)
+          loader: ({params}) => fetch(` https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft/${params.id}`)
           
         }
       ]
