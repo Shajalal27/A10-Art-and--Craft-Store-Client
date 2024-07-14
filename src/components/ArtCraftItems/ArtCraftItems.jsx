@@ -1,11 +1,23 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import AllItems from "../AllItems/AllItems";
 import { Slide } from "react-awesome-reveal";
+import { useEffect, useState } from "react";
 
 
 
 const ArtCraftItems = () => {
-    const items = useLoaderData() || [];
+    // const items = useLoaderData() || [];
+    const[items, setItems] = useState([]);
+
+    useEffect(() =>{
+        const fetchData = async () =>{
+            const res = await fetch('http://localhost:5000/addCraft');
+            const result = await res.json();
+            setItems(result);
+        }
+        fetchData();
+    }, [])
+
     return (
         <div>
             <Slide triggerOnce>
@@ -19,7 +31,13 @@ const ArtCraftItems = () => {
           </div>
            <div className="">
                {
-                items.map(item => <AllItems key={item._id} item={item}></AllItems>)
+                items.map(item =>(
+                    <Link key={item._id} to={`/item/${item._id}`}>
+                        <AllItems item={item}>
+                        </AllItems>
+                    </Link>
+                )) 
+                
                }
             </div>
         </div>

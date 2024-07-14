@@ -1,11 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 
 const UpdateItem = () => {
     const updatesItem = useLoaderData();
-
+    const navigate = useNavigate();
     const { _id, photo, item_name, subcategory_name, description, price, rating, customization, processing_time, name, email, stockStatus} = updatesItem;
 
     const handleUpdateItem = event =>{
@@ -27,7 +28,7 @@ const UpdateItem = () => {
         console.log(updateCraftItem);
 
         //send data server
-        fetch(` https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft/${_id}`, {
+        fetch(` http://localhost:5000/addCraft/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -44,9 +45,11 @@ const UpdateItem = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
+                  navigate('/craftList');
             }
         })
     }
+
 
     return (
         <div className="bg-[#F4F3F0] p-24">
@@ -178,7 +181,7 @@ const UpdateItem = () => {
                     </label>
                 </div>   
             </div>
-            <input type="submit" value="Update" className="btn btn-block bg-green-600" d
+            <input type="submit" value="Update" className="btn btn-block bg-green-600"
             />
          </form>
     </div>

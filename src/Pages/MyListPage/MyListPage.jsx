@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const MyListPage = ({mylist}) => {
+const MyListPage = ({item, items, setItems}) => {
 
-    const { _id, photo, item_name,  price, rating, customization, stockStatus, subcategory_name} = mylist;
+    const { _id, image, item_name,  price, rating, customization, stockStatus, subcategory_name} = item;
 
     const handleDelete = _id =>{
         console.log(_id);
@@ -21,8 +21,9 @@ const MyListPage = ({mylist}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(` https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft/${_id}`, {
-                method: "DELETE"
+            fetch(` http://localhost:5000/addCraft/${_id}`, {
+                method: "DELETE",
+                node:'no-cors',
             })
                 .then(res => res.json())
                 .then(data =>{
@@ -33,6 +34,8 @@ const MyListPage = ({mylist}) => {
                          text: "Your file has been deleted.",
                          icon: "success"
                         });
+                    const remaining = items.filter(item =>item._id !== _id)
+                    setItems(remaining);
                     }
                 })
             }
@@ -42,7 +45,7 @@ const MyListPage = ({mylist}) => {
     return (
         <div className="card w-full card-side bg-orange-300 shadow-xl pl-10
          pr-10 mt-10 mb-16 ">
-            <figure><img className="w-96 h-72" src={photo} alt=""/></figure>
+            <figure><img className="w-96 h-72" src={image} alt=""/></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl font-bold">{item_name}</h2>
                
@@ -54,9 +57,7 @@ const MyListPage = ({mylist}) => {
                 <p className="text-xl font-semibold text-green-600">{customization}</p>
                 <h3>Category:{subcategory_name}</h3>
                 <div className="card-actions justify-between ">
-                    <Link to={`update_item/${_id}`}
-                    
-                    >
+                    <Link to={`update_item/${_id}`} >
                         <button className="btn btn-primary  font-bold">Update</button>
                     </Link>
                     <button onClick={() => handleDelete(_id)}

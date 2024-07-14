@@ -12,6 +12,7 @@ import ArtCraftItems from '../components/ArtCraftItems/ArtCraftItems';
 import ViewDetails from '../Pages/ViewDetails/ViewDetails';
 import UpdateItem from '../components/UpdateItem/UpdateItem';
 import PrivateRoutes from './PrivateRoutes';
+import Details from '../Pages/Details';
 
 
 const router = createBrowserRouter([
@@ -23,23 +24,21 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <HomePage></HomePage>,
-            loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
+           loader: () => fetch('http://localhost:5000/addCraft')
         },
         {
           path: '/art-craft-items',
           element: <ArtCraftItems></ArtCraftItems>,
-          loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
+          loader: () => fetch(' http://localhost:5000/addCraft')
         },
         {
           path: '/addCraft',
-          element: <AddCraftItem></AddCraftItem>
+          element: <PrivateRoutes><AddCraftItem></AddCraftItem></PrivateRoutes>
         },
         {
           path: '/craftList',
-          element: <PrivateRoutes>
-                       <MyArtCraftList></MyArtCraftList>
-                    </PrivateRoutes>,
-          loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
+          element: <PrivateRoutes><MyArtCraftList></MyArtCraftList></PrivateRoutes>,
+           loader: () => fetch('http://localhost:5000/addCraft')
         },
         {
           path: '/logIn',
@@ -52,12 +51,17 @@ const router = createBrowserRouter([
         {
           path: '/view_details',
           element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-          loader: () => fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft')
+          loader: () => fetch('http://localhost:5000/addCraft')
+        },
+        {
+          path: '/viewDetails',
+          element: <Details></Details>
+          
         },
         {
           path:'craftList/update_item/:id',
           element: <PrivateRoutes><UpdateItem></UpdateItem></PrivateRoutes>,
-          loader: ({params}) => fetch(` https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/addCraft/${params.id}`)
           
         }
       ]

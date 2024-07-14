@@ -1,0 +1,139 @@
+[
+    { 
+      "image": "https://i.ibb.co/mJM499Q/premium-photo-1661756937563-8aa7aa77e333.jpg",
+      "item_name": "Landscape Painting",
+      "subcategory_name": "Mountain view canvas",
+      "description": "A beautiful landscape painting depicting a serene countryside.",
+      "price": 100,
+      "rating": 4.5,
+      "customization": "Yes",
+      "processing_time": "3-5 business days",
+      "stockStatus": "In stock",
+      "email": "user1@example.com",
+      "name": "John Doe"
+    },
+    { 
+      "image": "https://i.ibb.co/9HNcLmS/banner1.jpg",
+      "item_name": "Charcoal Portrait",
+      "subcategory_name": "Pencil Sketch Portrait",
+      "description": "A stunning charcoal portrait capturing the essence of the subject.",
+      "price": 150,
+      "rating": 4.8,
+      "customization": "No",
+      "processing_time": "7-10 business days",
+      "stockStatus": "Made to Order",
+      "email": "user2@example.com",
+      "name": "Jane Smith"
+    },
+    { 
+      "image": "https://i.ibb.co/MCfvm36/photo-1535929674412-d4844d37089d.jpg",
+      "item_name": "Abstract Art",
+      "subcategory_name": "Floral Watercolor Art",
+      "description": "A vibrant and dynamic abstract artwork, perfect for modern interiors.",
+      "price": 80,
+      "rating": 4.2,
+      "customization": "Yes",
+      "processing_time": "2-3 business days",
+      "stockStatus": "In stock",
+      "email": "user3@example.com",
+      "name": "Alice Johnson"
+    },
+    { "category_name": "Portrait Drawing",
+      "image": "https://i.ibb.co/cLqXRkH/photo-1611241893603-3c359704e0ee.jpg",
+      "item_name": "Pen Sketch",
+      "subcategory_name": " Realistic Oil Portrai",
+      "description": "An intricate pen sketch showcasing fine details and precision.",
+      "price": 50,
+      "rating": 4.0,
+      "customization": "Yes",
+      "processing_time": "1-2 business days",
+      "stockStatus": "In stock",
+      "email": "user4@example.com",
+      "name": "Michael Brown"
+    },
+    { 
+      "image": "https://i.ibb.co/cy87k9n/istockphoto-1402700291-612x612.jpg",
+      "item_name": "Figure Charcoal Sketch",
+      "subcategory_name": "Figure Charcoal Sketch",
+      "description": "A classic still life painting capturing the beauty of everyday objects.",
+      "price": 120,
+      "rating": 4.6,
+      "customization": "No",
+      "processing_time": "5-7 business days",
+      "stockStatus": "In stock",
+      "email": "user5@example.com",
+      "name": "Emily Wilson"
+    },
+    { 
+      "image": "https://i.ibb.co/dfR0Ycv/photo-1524856781660-e5c92f4ac62a.jpg",
+      "item_name": "Portrait Painting",
+      "subcategory_name": "Comic Strip Drawing",
+      "description": "A personalized portrait painting, ideal for commemorating special moments.",
+      "price": 200,
+      "rating": 4.9,
+      "customization": "Yes",
+      "processing_time": "4-6 business days",
+      "stockStatus": "Made to Order",
+      "email": "user6@example.com",
+      "name": "David Lee"
+    }
+  ]
+
+[
+  { 
+    "category_name": "Landscape Painting",
+    "image": "https://i.ibb.co/mJM499Q/premium-photo-1661756937563-8aa7aa77e333.jpg",
+    "subcategories": {
+      "subcategory_name": "Mountain view canvas", 
+      "image": "https://i.ibb.co/286642x/images-10.jpg", 
+      "other_info": "Description about Mountain view canvas"
+    }
+  },
+  { 
+    "category_name": "Portrait Drawing",
+    "image": "https://i.ibb.co/9HNcLmS/banner1.jpg",
+    "subcategories": {
+      "subcategory_name": "Pencil Sketch Portrait",
+      "image": "https://i.ibb.co/Tg5609R/charasarts-60491-IMG-20220620-WA0008-01.webp", 
+      "other_info": "Description about Pencil Sketch Portrait"
+    }  
+  },
+  { 
+    "category_name": "Watercolour Painting",
+    "image": "https://i.ibb.co/MCfvm36/photo-1535929674412-d4844d37089d.jpg",
+    "subcategories": {
+      "subcategory_name": "Floral Watercolor Art", 
+      "image": "https://i.ibb.co/cczLGLS/il-fullxfull-4476194998-akkb.jpg", 
+      "other_info": "Description about Floral Watercolor Art"
+    }  
+  },
+  { 
+    "category_name": "Oil Painting",
+    "image": "https://i.ibb.co/cLqXRkH/photo-1611241893603-3c359704e0ee.jpg",
+    "subcategories": {
+      "subcategory_name": " Realistic Oil Portrai",
+      "image": "https://i.ibb.co/GVvcGBk/images-9.jpg", 
+      "other_info": "Description about Realistic Oil Portrai"
+    }  
+  },
+  { 
+    "category_name": "Charcoal Sketching",
+    "image": "https://i.ibb.co/cy87k9n/istockphoto-1402700291-612x612.jpg",
+    "subcategories": {
+      "subcategory_name": "Figure Charcoal Sketch", 
+      "image": "https://i.ibb.co/4NkCQ0r/ddxepbv-819b495f-8df9-47ae-8bb8-c9671976f934.jpg", 
+      "other_info": "Description about Figure Charcoal Sketch"
+    }  
+  },
+  { 
+    "category_name": "Cartoon Drawing",
+    "image": "https://i.ibb.co/dfR0Ycv/photo-1524856781660-e5c92f4ac62a.jpg",
+    "subcategories": {
+      "subcategory_name": "Comic Strip Drawing", 
+      "image": "https://i.ibb.co/xmfRTyw/colourfrul-pictures-text-comic-strip-background-colourfrul-pictures-drawing-text-comic-strip-as-back.webp", 
+      "other_info": "Description about Comic Strip Drawing"
+    }  
+  }
+]
+
+  

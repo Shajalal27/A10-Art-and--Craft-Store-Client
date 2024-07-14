@@ -22,8 +22,9 @@ const AddCraftItem = () => {
         console.log(newCratItem);
 
         //send data server
-        fetch(' https://art-craft-store-server-rf7di9uen-shajalals-projects.vercel.app/addCraft', {
+        fetch(' http://localhost:5000/addCraft', {
             method: "POST",
+            node:'no-cors',
             headers: {
                 'content-type': 'application/json'
             },

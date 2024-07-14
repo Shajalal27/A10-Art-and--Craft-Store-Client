@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const AllItems = ({item}) => {
     const[loading, setLoading] = useState();
-    const { _id, photo, item_name, subcategory_name, description, price, rating, customization, processing_time, name, email, stockStatus} = item;
+    const { image, description, email, stockStatus} = item;
 
     return (
         <div>
@@ -21,7 +22,7 @@ const AllItems = ({item}) => {
                         <div className="flex items-center gap-3">
                             <div className="avatar">
                             <div className="mask mask-squircle w-12 h-12">
-                                <img src={photo} alt="Avatar Tailwind CSS Component" />
+                                <img src={image} alt="item.item_name" />
                             </div>
                             </div>
                             <div>
@@ -36,7 +37,9 @@ const AllItems = ({item}) => {
                         </td>
                         <td className="pl-28 w-96 text-green-600 font-bold">{stockStatus}</td>
                         <th className="w-40">
-                        <button className="btn bg-red-200 btn-xl font-bold">View Details</button>
+                        <Link to="/viewDetails">
+                             <button className="btn bg-red-200 btn-xl font-bold">View Details</button>
+                        </Link>
                         </th>
                     </tr>
                     </tbody>

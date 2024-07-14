@@ -1,6 +1,7 @@
+
 import { useLoaderData } from "react-router-dom";
 import ViewCard from "../../components/ViewCard/ViewCard";
-
+    
 
 const ViewDetails = () => {
     const views = useLoaderData();
